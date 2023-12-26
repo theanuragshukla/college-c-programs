@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+file=$1
+loc=$(pwd)
+fname="${file%.*}"
+ext="${file##*.}"
+if [ "$ext" = "c" ]; then 
+	clang "$file" -o "$loc/$fname.out"
+else
+	clang "$file" -o "$loc/$fname.out"
+fi
+"$loc/$fname.out"
